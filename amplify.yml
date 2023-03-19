@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "LEROOOOOOOOOOY JEEEEEEENKIIIINNNNNNSSS"
+        - npm ci
+    build:
+      commands:
+        - npm run build
+        - echo "LFG!"
+  artifacts:
+    baseDirectory: /dist/
+    files:
+      - "**/*"
+  cache:
+    paths: []
