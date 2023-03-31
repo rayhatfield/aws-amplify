@@ -1,16 +1,22 @@
+:root {
+    --bgColor: #6495ed;
+}
+
 .maze {
-    aspect-ratio: 1;
     position: fixed;
     inset: 0;
     z-index: -1;
     filter: blur(10px);
-    /* background-color: tomato; */
     mix-blend-mode: multiply;
+    display: grid;
+    mix-blend-mode: multiply;
+    background: var(--bgColor);
+    grid-template: 1fr / 1fr;
 }
 
 .cell {
     --doorColor: transparent;
-    background-color: #6495ed;
+    background-color: var(--bgColor);
     color: transparent;
     /* box-shadow: 0 0 0 1px black; */
     margin: -1px;
@@ -23,7 +29,7 @@
         background-color: white;
     }
     to {
-        background-color: #6495ed;
+        background-color: var(--bgColor);
     }
     
 }
