@@ -40,7 +40,7 @@ const availableCellsFn = (width: number, height: number) => (maze: number[], fro
     return { directions, length: dirs.length };
 }
 
-const useGenerateMaze = (width: number, height: number, threshold) => {
+const useGenerateMaze = (width: number, height: number, threshold: number) => {
     const initialState = useCallback(() => ({
         branchPoints: [] as number[],
         done: false,
@@ -99,14 +99,14 @@ const useGenerateMaze = (width: number, height: number, threshold) => {
 
     useEffect(() => void update(0), [])
 
-    return [mazeState, restart];
+    return mazeState;
 }
 
 
 export function Maze({ width = 20, height = width, threshold = .999, children }: MazeProps) {
-    const [maze, restart] = useGenerateMaze(width, height, threshold);
+    const maze = useGenerateMaze(width, height, threshold);
     return (
-        <section className={styles.maze} onClick={restart}>
+        <section className={styles.maze}>
             <div style={{ display: 'grid', gridTemplate: `repeat(${height}, 1fr) / repeat(${width}, 1fr)` }}>
                 {maze.map((cell, i) => <Cell key={i} value={cell} />)}
             </div>
