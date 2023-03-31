@@ -1,0 +1,48 @@
+.maze {
+    aspect-ratio: 1;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    filter: blur(10px);
+    /* background-color: tomato; */
+    mix-blend-mode: multiply;
+}
+
+.cell {
+    --doorColor: transparent;
+    background-color: #6495ed;
+    color: transparent;
+    /* box-shadow: 0 0 0 1px black; */
+    margin: -1px;
+    aspect-ratio: 1;
+    /* opacity: 0.25; */
+}
+
+@keyframes fader {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: #6495ed;
+    }
+    
+}
+
+.visited {
+    /* border: 1px solid black;
+    background-color: white; */
+    animation: fader .5s;
+}
+
+.up {
+    border-top-color: var(--doorColor, transparent);
+}
+.down {
+    border-bottom-color: var(--doorColor, transparent);
+}
+.left {
+    border-left-color: var(--doorColor, transparent);
+}
+.right {
+    border-right-color: var(--doorColor, transparent);
+}
