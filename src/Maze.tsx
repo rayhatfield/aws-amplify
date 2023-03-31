@@ -53,7 +53,6 @@ const useGenerateMaze = (width: number, height: number, threshold: number) => {
     const restart = useCallback(() => {
         refState.current.animationFrameId && cancelAnimationFrame(refState.current.animationFrameId);
         refState.current = initialState();
-        console.log('restart', refState.current)
         refState.current.animationFrameId = requestAnimationFrame(update);
     }, [initialState]);
 
